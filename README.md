@@ -1,7 +1,7 @@
 # BucStop
 ### A Team [Redacted] Project
 ### Members:
-> Phillip Edwards, Tyler Waddell, 
+> Phillip Edwards, Tyler Waddell, Ethan Roberts
 #### CSCI 4350
 #### Spring 2024, East Tennessee State University
 
