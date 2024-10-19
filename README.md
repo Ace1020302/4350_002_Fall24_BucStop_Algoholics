@@ -2,7 +2,7 @@
 ### Team Algoholics (Fall 2024)
 ### Continuation of Team [Redacted] (Spring 2024)
 ### Members:
-> Phillip Edwards, Tyler Waddell, Ethan Roberts, Keillor Cogswell, Levi Shingleton, Caden Lafollette
+> Phillip Edwards, Tyler Waddell, Ethan Roberts, Keillor Cogswell, Levi Shingleton, Caden Lafollette, Travis Nagle
 #### CSCI 4350
 #### Spring 2024, East Tennessee State University
 
