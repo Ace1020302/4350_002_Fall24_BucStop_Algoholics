@@ -1,0 +1,8 @@
+ALG4350-35 Write Up
+
+Monolithic models are where all the business logic, UI, and data is stored in one central location.
+These models are easy to spin up but can get confusing and complicated as additions become more complex.
+
+Microservices break out the UI, business logic, and data into their own separate functions.
+Each function serves one purpose so as to not complicate that layer of the code.
+Typically broken up into three tiers: Data, Presentation, and Logic.

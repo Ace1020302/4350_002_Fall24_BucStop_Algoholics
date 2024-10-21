@@ -55,5 +55,5 @@ BucStop folder.
 ### Help
 For more documentation on how to run locally and how to set up deployments, see the relevant links below:
 * [Team Redacted Video Playlist](https://youtube.com/playlist?list=PLxsGO-QGipWmVzxFkVbA-o6BUW5eRdk3H&si=a7jHaNBgdTtXgoJ4)
-* [Running Locally](Algoholics_Local_Instance_Guide.txt)
-* [How to Deploy](Algoholics_Deployment_Guide.txt)
+* [Running Locally](Documentation/Deployment/Algoholics_Local_Instance_Guide.txt)
+* [How to Deploy](Documentation/Deployment/Algoholics_Deployment_Guide.txt)
