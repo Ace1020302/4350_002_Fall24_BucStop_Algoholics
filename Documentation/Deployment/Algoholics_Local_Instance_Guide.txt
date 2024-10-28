@@ -1,0 +1,9 @@
+HOW TO RUN BUCSTOP LOCALLY (by Caden Lafollette) 
+
+1. Open folder where you want to store repo in cmd prompt
+2. git clone https://github.com/Ace1020302/4350_002_Fall24_BucStop_Algoholics.git
+3. Open solution file in Visual Studio
+4. Click run
+
+
+Everything should work by default, you may have to accept a warning or two. 

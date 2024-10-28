@@ -1,0 +1,9 @@
+I looked into issue 93 on the Jira backlog, the one about determining the allowed file extensions for game submission. Through analysis of the game portion of BucStop, I determined that only JavaScript submissions will be acceptable for the time being. 
+
+The comments were particularly helpful in discovering this information. For example, line 3 of Play.cshtml is a comment that reads: "This is the page every game is embeded into with the js files(in wwwroot folder)". Likewise, in both of the .cshtml files for the games (Tetris.cshtml, Snake.cshtml), there is a comment that reads: "Depricated page. This page was how we loaded in the Tetris game before loading games using the js files". There is no evidence that Pong was implemented prior to the switch to JavaScript.
+
+Another piece of evidence comes from the Game class. GamesController.cs uses a class called Game to perform its functions, which pertain to loading games and their info, along with incrementing play count. In this Game class, there is a string object called Content, which has a DataType of DataType.MultiLineText. It also explicitly refers to Content as pertaining to a JavaScript file.
+
+Finally, Play.cshtml loads the aforementioned Content object from the Game class, using the <script> tag to do so. While not always, this tag is typically used to implement JavaScript code into an HTML page. 
+
+Conclusion: BucStop, in its current state, expects JavaScript files. Hence, we should adhere to giving it JavaScript files, once we get the submission function up and running. I also suspect that getting BucStop's code to recognize game file types other than JavaScript, let alone run them, may not be Sprintable. 

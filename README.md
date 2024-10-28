@@ -15,7 +15,8 @@ This project also communicates to a microservice with HTTP calls for the game in
 * [Backlog Fall 2023](https://brandonbcb02.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?epics=visible&atlOrigin=eyJpIjoiMjgzYjkwZGI0ZjU3NDNiM2JhMDNiOWU4MDliZjQ0YjEiLCJwIjoiaiJ9)
 * [Backlog Spring 2024](https://docs.google.com/document/d/100WxhA-8cx5tWQfZs9JMoHvPGJO37cdkfATp0Td0uos/edit?usp=sharing)
 ### Project Plan:
-[Project Plan Doc link](https://docs.google.com/document/d/1lopwnWAl-WA3CEhNJGGfSxrIz2FvDrpibQSW70T8A-o/edit)
+* [Project Plan Doc (Word)](Vision-DoD-MVP-Scope%20Doc.docx)
+* [Project Plan Doc (PDF)](Vision-DoD-MVP-Scope%20Doc.pdf)
 
 ### Project Structure: 
 To understand the project structure, familiarize yourself with the
@@ -52,7 +53,7 @@ BucStop folder.
 * [Pong Microservice](https://github.com/Redacted-Team/4350_002_Fall23_Pong)
 
 ### Help
-For more documentation on how to run locally and how to set up deployments, see the google docs below:
+For more documentation on how to run locally and how to set up deployments, see the relevant links below:
 * [Team Redacted Video Playlist](https://youtube.com/playlist?list=PLxsGO-QGipWmVzxFkVbA-o6BUW5eRdk3H&si=a7jHaNBgdTtXgoJ4)
-* [Running Locally](https://docs.google.com/document/d/1gfUpjZNfqWyv1ohUW1IaS8fOhXp0hOx6tFQVXBADa8Q/edit?usp=sharing)
-* [How to Deploy](https://docs.google.com/document/d/1i0edcmvZm_j0zQLYiigNliW39FJuJbmhkxOCCb2NbVs/edit?usp=sharing)
+* [Running Locally](Documentation/Deployment/Algoholics_Local_Instance_Guide.txt)
+* [How to Deploy](Documentation/Deployment/Algoholics_Deployment_Guide.txt)

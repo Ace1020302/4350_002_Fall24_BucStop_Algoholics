@@ -1,0 +1,36 @@
+Guide to deploying BucStop with AWS (by Tyler Waddell) 
+1. In AWS, search for EC2
+2. Click on Launch Instance
+3. Pick Ubuntu as OS
+4. Create key pair (Leave everything on default, but change name to Bucstop_key)
+5. Download the key (it should auto download)
+6. Allow traffic from ssh, https, and http
+7. Leave storage as default
+8. Launch instance
+9. Go to EC2 -> Connect
+10. In terminal... sudo adduser [name]
+11. Create password for user
+12. Enter in information (Full name, phone number, etc.)
+13. sudo username -aG sudo [name]
+14. su [name]
+15. cd ~
+16. Install docker w/ ubuntu (https://docs.docker.com/engine/install/ubuntu/)
+17. Copy and paste scripts from website
+18. Install latest packages (Command in the website)
+19. sudo docker -u [docker username] -> Enter your docker password
+20. Clone all of the repos: 
+   - From GitHub repo, click on code -> copy Https of repo
+   - git clone [https://*repo*] 
+21. Build the repos with docker:
+   - cd [repo]
+   - sudo docker build -f [repo]/[docker file] -t [docker username]/[repo] .
+22. Push all images w/ docker
+   - sudo docker push [docker username]/[repo]
+23. Go to BucStop repo -> Go to scripts -> vim docker-compose.yml
+   - Change "sirethan" to your docker username
+24. Move the scripts folder to the home directory
+   - cp -r scripts/ ~
+25. cd .. -> cd scripts/
+26. chmod +x firstDeploy.sh
+27. ./firstDeploy.sh
+28. Copy IP address of Bucstop and enter in browser
