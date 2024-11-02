@@ -49,6 +49,7 @@
 @using (Html.BeginForm("Submit", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <label>Files</label>
+    <br />
     <input type="file" name="file" accept=".js"/>
     <div>
         <button type="submit">Upload</button>

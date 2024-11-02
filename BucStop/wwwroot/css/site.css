@@ -52,6 +52,10 @@ label {
     color: white
 }
 
+input {
+    color: white;
+}
+
 /* Color and font classes */
 .color-etsu-navy {
     color: #00053E;
