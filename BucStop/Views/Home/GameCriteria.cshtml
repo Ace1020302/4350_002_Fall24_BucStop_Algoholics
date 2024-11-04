@@ -36,4 +36,22 @@
 </ul>
 <hr>
 <h1>Add your game</h1>
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdxu3kg1Cm7Sc7wogaYuRNzbL8fafdTQ9I_nyuCIttKzlg63Q/viewform?embedded=true" width="640" height="1201" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+<!-- This block displays a message saying either the file was uploaded or only .js files are accepted -->
+@if (TempData["Message"] != null)
+{
+    <div>
+        <p>@TempData["Message"]</p>
+    </div>
+}
+
+<!-- This is a form for submitting a file. Once the user clicks submit, the method 'Submit' in the HomeController is used-->
+@using (Html.BeginForm("Submit", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <label>Files</label>
+    <br />
+    <input type="file" name="file" accept=".js"/>
+    <div>
+        <button type="submit">Upload</button>
+    </div>
+}
