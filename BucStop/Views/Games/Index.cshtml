@@ -38,6 +38,11 @@
         transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);*/
     }
+
+    .game-play-count {
+        color: white;
+    }
+
 </style>
 <!-- This is the games list page. Each of the games is loaded in from the model using the game's ID value -->
 <h1>List of Games</h1>
@@ -62,7 +67,7 @@
                     <div class="container overlay">
                         <div class="card-title text">@game.Title</div>
                         <div class="card-text text game-description"><small class="text-muted">@game.Description</small></div>
-                        <div class="text-muted game-play-count">Play Count: @game.PlayCount</div>
+                        <div class="game-play-count">Play Count: @game.PlayCount</div>
                     </div>
                 </a>
             </div>
