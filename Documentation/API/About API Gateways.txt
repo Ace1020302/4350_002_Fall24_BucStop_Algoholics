@@ -8,5 +8,5 @@ The services typically involved in satisfying API calls are APIs, hence the term
 
 Aside from aggregating and servicing requests, API gateways have some additional benefits that allow them to serve multiple duties at once in a system architecture. 
 They can be used to collect metrics based on the incoming requests and who is sending them, perform load balancing on traffic to lessen the strain on the system, and can authenticate the incoming traffic to ensure that it is legitimate, among other functionalities. 
-That is not to say that API gateways are a panacea for developing a system architecture, as they can just as easily prove a single point of failure if not well-maintained. 
+That is not to say that API gateways are a cure-all for developing a system architecture, as they can just as easily prove a single point of failure if not well-maintained. 
 API gateways are, however, multi-faceted and can consolidate many separate functionalities into a lighter, more compact package that allows for greater efficiency in a system. 
