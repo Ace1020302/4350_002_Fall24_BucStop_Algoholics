@@ -15,6 +15,7 @@ namespace BucStop.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly GameService _gameService;
         private readonly IWebHostEnvironment _environment;
+        private static readonly HttpClient _httpClient = new HttpClient();
 
         public HomeController(ILogger<HomeController> logger, GameService games)
         {
@@ -87,15 +88,25 @@ namespace BucStop.Controllers
                     return RedirectToAction("GameCriteria", "Home");
                 }
 
-                var fileName = Path.GetFileName(file.FileName);
-                var filePath = Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot\uploads", fileName);
-                using (var fileStream = new FileStream(filePath, FileMode.Create))
-                {
-                    await file.CopyToAsync(fileStream);
-                }
+                HttpContent fileStreamContent = new StreamContent(file.OpenReadStream());
 
-                // Return a success message
-                TempData["Message"] = "File uploaded successfully!";
+                using (var formData = new MultipartFormDataContent())
+                {
+                    formData.Add(fileStreamContent, "file1", "file1");
+
+                    var response = await _httpClient.PostAsync("https://localhost:32768/api/Submission", formData);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        // Return a success message
+                        TempData["Message"] = "File uploaded successfully!";
+                    }
+                    else
+                    {
+                        //return an error message
+                        TempData["Message"] = response.ToString();
+                    }
+                }
             }
             return RedirectToAction("GameCriteria", "Home");
         }
