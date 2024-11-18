@@ -94,7 +94,8 @@ namespace BucStop.Controllers
                 {
                     formData.Add(fileStreamContent, "file1", "file1");
 
-                    var response = await _httpClient.PostAsync("https://localhost:32768/api/Submission", formData);
+                    // For locally deploying it, change the port number to whatever the submission microservice is
+                    var response = await _httpClient.PostAsync("https://localhost:32775/api/Submission", formData);
 
                     if (response.IsSuccessStatusCode)
                     {
