@@ -1,0 +1,19 @@
+For Task 142, I mainly took a look at GitHub Actions in relation to Continuous Deployment. 
+
+To summarize, CI, or Continuous Integration, is a practice that requires frequent code commits
+to a project/repository with the aim of detecting errors sooner and mitigates the amount of code
+needed to debug them. This, in turn, makes merging much easier as its less likely there will be
+any conflicts.
+
+CI can be done on GitHub through the Actions functionality using workflows, capable of automatically building
+code and running tests. It will display the result of these actions, so you will be able to know if there
+are any errors that happen. If all goes well, it will be ready for review and/or to merge. Actions requires
+a virtual machine in order to use, which GitHub provides as something called "Runners" 
+(for more information on those, go to this link https://docs.github.com/en/actions/using-github-hosted-runners/using-github-hosted-runners/about-github-hosted-runners),
+but you can also use your own. The workflows will run based on how they're configured, whether based on a
+certain action (like code being pushed) or on a schedule.
+
+GitHub has a few templates to start with as well, which can be found at this link: https://github.com/actions/starter-workflows/tree/main/ci
+Looking through the example templates, I don't think any of them will be particularly applicable to our
+project, but I do think they're good examples to look at to see how they're structured. Overall, 
+Actions seems like a solid functionality that will help with automated testing.

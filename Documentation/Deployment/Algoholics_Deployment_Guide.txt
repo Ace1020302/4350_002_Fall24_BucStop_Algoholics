@@ -11,7 +11,7 @@ Guide to deploying BucStop with AWS (by Tyler Waddell)
 10. In terminal... sudo adduser [name]
 11. Create password for user
 12. Enter in information (Full name, phone number, etc.)
-13. sudo username -aG sudo [name]
+13. sudo usermod -aG sudo [name]
 14. su [name]
 15. cd ~
 16. Install docker w/ ubuntu (https://docs.docker.com/engine/install/ubuntu/)
