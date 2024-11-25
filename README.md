@@ -14,7 +14,7 @@ The only repo that is necessary for deployment is the one. The other associated 
 
 The submission microservice (Developed in Fall 2024 by Algoholics team) is capable of sending files across two separate services when running locally.
 
-The other repos (pong, tetris, snake, and API gateway) were created by a previous team as another attempt at implementing microservice functionality. To our (Team Algoholics) understanding, they do not communicate properly when all of them are deployed. We spent the first 2-3 sprints trying to understand the implementation as it stands and didn't mae much progress. Be warned.
+The other repos (pong, tetris, snake, and API gateway) were created by a previous team as another attempt at implementing microservice functionality. To our (Team Algoholics) understanding, they do not communicate properly when all of them are deployed. We spent the first 2-3 sprints trying to understand the implementation as it stands and didn't make much progress. Be warned.
 
 
 ### Backlog Information:
