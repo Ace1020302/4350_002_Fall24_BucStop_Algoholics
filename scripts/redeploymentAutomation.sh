@@ -15,4 +15,4 @@ cd ..
 
 # Perform the redeployment scripts of building and pushing the updated image
 sudo docker build -f BucStop/Dockerfile -t $username/$image .
-sudo docker push $username/$image . 
+sudo docker push $username/$image 
