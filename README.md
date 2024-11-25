@@ -21,6 +21,10 @@ Once it's deployed, you've got one of the more difficult steps out of the way. I
 
 One of our pitfalls was not having the knowledge or information about how certain things worked or were structured, as well as certain parts of the project and some of the documentation not working/lining up as they should. Because of this, we put a lot of effort towards acquiring the necessary knowledge and documenting our findings. We ended up replacing the original file submission form with a microservice that will handle it, though it only works on a local version of BucStop and not when deploying it through AWS. And that leads to the final features we were looking to add, one being a fix and full implementation of the submission form, and the other being the automation of deployment.
 
+### Advice For Next Product Owner:
+* [Product Owner Recommendations (Word)](Documentation/Misc/Product_Owner_Recommendations.pdf)
+* [Product Owner Recommendations (PDF)](Documentation/Misc/Product_Owner_Recommendations.pdf)
+
 ### Backlog Information:
 * [Backlog Fall 2023](https://brandonbcb02.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?epics=visible&atlOrigin=eyJpIjoiMjgzYjkwZGI0ZjU3NDNiM2JhMDNiOWU4MDliZjQ0YjEiLCJwIjoiaiJ9)
 * [Backlog Spring 2024](https://docs.google.com/document/d/100WxhA-8cx5tWQfZs9JMoHvPGJO37cdkfATp0Td0uos/edit?usp=sharing)
