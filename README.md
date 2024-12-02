@@ -26,8 +26,8 @@ One of our pitfalls was not having the knowledge or information about how certai
 * [Product Owner Recommendations (PDF)](Documentation/Misc/Product_Owner_Recommendations.pdf)
 
 ### Advice For Next Scrum Master:
-* [Scrum Master Recommendations (Word)](Documentation/Misc/Tips for Scrum Masters.docx)
-* [Scrum Master Recommendations (PDF)](Documentation/Misc/Tips for Scrum Masters.pdf)
+* [Scrum Master Recommendations (Word)](Documentation/Misc/Tips_for_Scrum_Masters.docx)
+* [Scrum Master Recommendations (PDF)](Documentation/Misc/Tips_for_Scrum_Masters.pdf)
 
 ### Backlog Information:
 * [Backlog Fall 2023](https://brandonbcb02.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?epics=visible&atlOrigin=eyJpIjoiMjgzYjkwZGI0ZjU3NDNiM2JhMDNiOWU4MDliZjQ0YjEiLCJwIjoiaiJ9)
