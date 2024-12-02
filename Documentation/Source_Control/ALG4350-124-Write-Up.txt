@@ -1,0 +1,22 @@
+ALG4350-124 Write Up
+
+There is really only one spot that we need to worry about when preserving data and that's the playcount values.
+We need to keep an accurate record of the number of players that have played each game and continue to display that
+data unchanged through each new version. Keillor has brought forwards some options we have to handle this as well as there being
+a number of existing JSON files that could be used for storage. I want to make note as well that there is a leaderboard section underneath
+each of the games. While there is no data there currently and I don't believe it is ever being updated, this is another location we would 
+potentially want to consider for persistent storage. 
+
+Notes on playcount.json and the way things are being stored currently:
+As was shown on Wednesday 10/30, there may be some cleanup needed with how the
+project stores persistent data. As of writing this (11/01/2024), we have found at least 5 different locations that are meant to store
+the play count of each game. One in the wwwroot location listed under playcount.json, one in games.json, and one for each of 
+the JS games all called playcount.json. Running the project locally accurately reflects the play count under the playcount.json
+file listed in wwwroot, however, on deployment of the test environment, we noticed that these values are not being reflected in this file.
+Additionally, upon restarting the instance, the same play count values are reflected on the site, despite not being located anywhere in the codebase.
+There have been some ideas as to why this is, a few to note here is that AWS may have some type of onboard memory that is keeping track of the data
+of the games object that is being serialized into the playcount.json file. There is also the possibility that we still just haven't located where the data
+is being stored, however, I believe this to be unlikely given that playcount.json updates locally.
+
+Regardless of the reason, this is an issue that may be valuable to look into in the future should the need arise. This issue does not currently block any
+of the progress we plan to make on the MVP. I still think it would be good to make note of this for future classes in case they wish to tackle this problem.
