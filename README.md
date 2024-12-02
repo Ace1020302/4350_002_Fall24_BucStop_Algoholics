@@ -18,6 +18,12 @@ For a quick start to get things rolling, begin with running BucStop locally usin
 After successfully running it locally, follow these instructions for deployment (be sure to use the repos found below in the "Associated Repositories" section:
 * [How to Deploy](Documentation/Deployment/Algoholics_Deployment_Guide.txt)
 
+The only repo that is necessary for deployment is the one. The other associated repos are attempts at implementing functionality of microservices.
+
+The submission microservice (Developed in Fall 2024 by Algoholics team) is capable of sending files across two separate services when running locally.
+
+The other repos (pong, tetris, snake, and API gateway) were created by a previous team as another attempt at implementing microservice functionality. To our (Team Algoholics) understanding, they do not communicate properly when all of them are deployed. We spent the first 2-3 sprints trying to understand the implementation as it stands and didn't make much progress. Be warned.
+
 Once it's deployed, you've got one of the more difficult steps out of the way. If you test the games and pong isn't working correctly, that's normal (it's how it was for us too).
 
 One of our pitfalls was not having the knowledge or information about how certain things worked or were structured, as well as certain parts of the project and some of the documentation not working/lining up as they should. Because of this, we put a lot of effort towards acquiring the necessary knowledge and documenting our findings. We ended up replacing the original file submission form with a microservice that will handle it, though it only works on a local version of BucStop and not when deploying it through AWS. And that leads to the final features we were looking to add, one being a fix and full implementation of the submission form, and the other being the automation of deployment.
@@ -29,13 +35,6 @@ One of our pitfalls was not having the knowledge or information about how certai
 ### Advice For Next Scrum Master:
 * [Scrum Master Recommendations (Word)](Documentation/Misc/Tips_for_Scrum_Masters.docx)
 * [Scrum Master Recommendations (PDF)](Documentation/Misc/Tips_for_Scrum_Masters.pdf)
-=======
-
-The only repo that is necessary for deployment is the one. The other associated repos are attempts at implementing functionality of microservices.
-
-The submission microservice (Developed in Fall 2024 by Algoholics team) is capable of sending files across two separate services when running locally.
-
-The other repos (pong, tetris, snake, and API gateway) were created by a previous team as another attempt at implementing microservice functionality. To our (Team Algoholics) understanding, they do not communicate properly when all of them are deployed. We spent the first 2-3 sprints trying to understand the implementation as it stands and didn't make much progress. Be warned.
 
 ### Backlog Information:
 * [Backlog Fall 2023](https://brandonbcb02.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?epics=visible&atlOrigin=eyJpIjoiMjgzYjkwZGI0ZjU3NDNiM2JhMDNiOWU4MDliZjQ0YjEiLCJwIjoiaiJ9)
