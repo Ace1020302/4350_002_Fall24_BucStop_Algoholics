@@ -9,6 +9,7 @@
 ### Overview:
 This project is a game website made by and for ETSU students. It
 is a place to put games created by ETSU students.
+
 This project also communicates to a microservice with HTTP calls for the game information, the repository is hosted in the links below. BucStop also interacts with this Microservice through an API Gateway whose repository is also listed below. It is deployed with the microservice using docker compose, see the scripts folder for the docker-compose.yml file.
 ### Starting Point
 For a quick start to get things rolling, begin with running BucStop locally using these instructions:
@@ -28,6 +29,13 @@ One of our pitfalls was not having the knowledge or information about how certai
 ### Advice For Next Scrum Master:
 * [Scrum Master Recommendations (Word)](Documentation/Misc/Tips_for_Scrum_Masters.docx)
 * [Scrum Master Recommendations (PDF)](Documentation/Misc/Tips_for_Scrum_Masters.pdf)
+=======
+
+The only repo that is necessary for deployment is the one. The other associated repos are attempts at implementing functionality of microservices.
+
+The submission microservice (Developed in Fall 2024 by Algoholics team) is capable of sending files across two separate services when running locally.
+
+The other repos (pong, tetris, snake, and API gateway) were created by a previous team as another attempt at implementing microservice functionality. To our (Team Algoholics) understanding, they do not communicate properly when all of them are deployed. We spent the first 2-3 sprints trying to understand the implementation as it stands and didn't make much progress. Be warned.
 
 ### Backlog Information:
 * [Backlog Fall 2023](https://brandonbcb02.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?epics=visible&atlOrigin=eyJpIjoiMjgzYjkwZGI0ZjU3NDNiM2JhMDNiOWU4MDliZjQ0YjEiLCJwIjoiaiJ9)
