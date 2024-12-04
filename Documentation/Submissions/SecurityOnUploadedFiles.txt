@@ -1,0 +1,71 @@
+This is for documentation for a few security concerns on uploaded files:
+
+.NET doesn't inherently have a malware scanner. 
+But there are some techniques we could use to validate files.
+
+When a file is created, a file signature is created with it at the end of the file. 
+For example, if I had a JPG image, it's file signature would be FF D8 FF. 
+This would be located at the start of the JPG. 
+Looking for some code examples online a validation of a file could be done like this:
+
+byte[] fileData;
+using (var binaryReader = new BinaryReader(uploadedFile.InputStream))
+{
+    fileData = binaryReader.ReadBytes(4); // Read the first 4 bytes of the file
+}
+
+string fileSignature = BitConverter.ToString(fileData).Replace("-", " ");
+var allowedSignatures = new Dictionary<string, string>
+{
+    { ".jpg", "FF D8 FF" }, 
+};
+
+if (!allowedSignatures[fileExtension].StartsWith(fileSignature))
+{
+    ModelState.AddModelError("File", "File signature mismatch.");
+}
+
+While it'll verify the file type, it doesn't check to see what is at the end of the file. 
+You append some code after the file has technically ended. 
+For example, the end of the file for a JPG image is FF D9. 
+After this byte, you could add more data to it. 
+
+Problem with this is that JavaScript files do not have any type of file signature from what I've seen.
+
+You could still use something like this to determine an accepted file type:
+
+var allowedExtension = ".js";
+var fileExtension = Path.GetExtension(uploadedFile.FileName).ToLower();
+if (fileExtension != allowedExtension)
+{
+    ModelState.AddModelError("File", "Unsupported file type.");
+}
+
+But what's stopping people from just renaming a .py to .js...
+
+Looking it up online, apparently you can check it by using ESLint (https://eslint.org/). 
+I don't know how to get this running or anything like that, but it advertises we can integrate this into CI/CD.
+There was another tool called Jint (https://github.com/sebastienros/jint). 
+We could sandbox the code, but I don't know how we could go about doing that. 
+
+For scanning the code for something like malware, I looked into this and found that Cisco has an open source tool called ClamAV that does this (https://www.clamav.net/).
+I asked Chat to see what it might say for code and it said this:
+
+using (var clam = new ClamClient("localhost", 3310)) // ClamAV server running on localhost
+{
+    var scanResult = await clam.ScanFileOnServerAsync(uploadedFile.InputStream); // Stream scanning
+    if (scanResult.InfectedFiles.Any())
+    {
+        ModelState.AddModelError("File", "File is infected with a virus.");
+    }
+}
+
+It might be worth looking into this.
+
+Another thing that might be worth looking into is watching for traversal attacks.
+Someone could upload a file called ../../../../etc/passwd
+To prevent it, we need to sanitize it like this:
+
+var safeFileName = Path.GetFileName(uploadedFile.FileName);
+
+We can parameterize the file name and everything should be ok.

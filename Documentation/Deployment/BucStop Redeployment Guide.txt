@@ -1,0 +1,10 @@
+How to Redeploy an Instance of BucStop:
+1. Launch the Ubuntu instance in EC2. 
+2. Connect to the instance via the AWS terminal.
+3. It will prompt you to log in, so enter your credentials.
+4. Once you have logged in, set your working directory to the GitHub repo, corresponding to whatever branch is relevant.
+5. Log into Docker using the AWS terminal.
+6. Build a Docker instance using the repo's Dockerfile.
+7. Upon a successful build, push changes from the repo to the Docker instance. 
+8. Redeploy the Docker instance.
+9. Once the Docker instance has been redeployed, connect to the IP address and assess the changes, if any.

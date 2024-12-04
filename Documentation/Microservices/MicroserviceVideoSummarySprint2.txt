@@ -1,0 +1,11 @@
+Video Selected: “Microservices Explained in 5 MINUTES | What is a microservice architecture?”
+Video Link: https://www.youtube.com/watch?v=gBOUfyCl6XY
+
+Summary:
+Microservices handle subdomains/features in a larger business system, allowing for specialized teams. Development is done in parallel instead of series, and they respond more easily to fluctuating demand. This is in contrast with monoliths, where everything is packed into a single app, making it harder to scale or keep distinct work roles.
+
+Microservices are not without flaws, however. A single business function typically uses multiple microservices, meaning they will have to interact over the network. This increases complexity of design/implementation and can cause larger issues when something fails. 
+Orchestrators help remedy this problem by coordinating microservices with a workflow, but it can be hard to maintain consistency between domains, especially when something fails. Another solution is choreography, which has microservices following an event log and acting independently based on need. In this case, data flow can be harder to visualize and troubleshoot, since components are not connected. Finally, microservices can be strenuous for the Ops side when compared to monoliths, since there are more pieces to account for.
+
+Many services exist to make it easier to develop and deploy microservices, such as through containerization and cloud provisions. Leveraging these is important to making microservices work for a business, but they can also be expensive.
+

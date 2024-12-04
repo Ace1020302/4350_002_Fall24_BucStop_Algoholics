@@ -1,6 +1,7 @@
 ﻿using BucStop.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Reflection;
 
 /*
  * This file has the controllers for everything outside of the games
@@ -13,6 +14,11 @@ namespace BucStop.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly GameService _gameService;
+        private readonly IWebHostEnvironment _environment;
+        private static readonly HttpClient _httpClient = new HttpClient();
+
+        //change this to make post request to a submission microservice
+        private static readonly string submissionURL = string.Empty;
 
         public HomeController(ILogger<HomeController> logger, GameService games)
         {
@@ -70,6 +76,73 @@ namespace BucStop.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public async Task<IActionResult> Submit(IFormFile file)
+        {
+            //if no url given, store locally
+            if (submissionURL == string.Empty)
+            {
+                if (file != null && file.Length > 0)
+                {
+                    var fileExtension = Path.GetExtension(file.FileName).ToLower();
+                    // Check if the file is a JavaScript file
+                    if (fileExtension != ".js")
+                    {
+                        // Return an error message if the file is not a JavaScript file
+                        TempData["Message"] = "Only JavaScript (.js) files are allowed.";
+                        return RedirectToAction("GameCriteria", "Home");
+                    }
+
+                    var fileName = Path.GetFileName(file.FileName);
+                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), @"Uploads", fileName);
+                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await file.CopyToAsync(fileStream);
+                    }
+
+                    // Return a success message
+                    TempData["Message"] = "File uploaded successfully!";
+                }
+            }
+            //try post request to given url
+            else
+            {
+                if (file != null && file.Length > 0)
+                {
+                    var fileExtension = Path.GetExtension(file.FileName).ToLower();
+                    // Check if the file is a JavaScript file
+                    if (fileExtension != ".js")
+                    {
+                        // Return an error message if the file is not a JavaScript file
+                        TempData["Message"] = "Only JavaScript (.js) files are allowed.";
+                        return RedirectToAction("GameCriteria", "Home");
+                    }
+
+                    HttpContent fileStreamContent = new StreamContent(file.OpenReadStream());
+
+                    using (var formData = new MultipartFormDataContent())
+                    {
+                        formData.Add(fileStreamContent, "file1", "file1");
+
+                        // For locally deploying it, change the port number to whatever the submission microservice is
+                        var response = await _httpClient.PostAsync("https://localhost:32775/api/Submission", formData);
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            // Return a success message
+                            TempData["Message"] = "File uploaded successfully!";
+                        }
+                        else
+                        {
+                            //return an error message
+                            TempData["Message"] = response.ToString();
+                        }
+                    }
+                }
+            }
+
+            return RedirectToAction("GameCriteria", "Home");
         }
     }
 }

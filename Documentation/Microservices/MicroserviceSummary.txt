@@ -1,0 +1,4 @@
+A microservice is an architectural pattern where every application can function as its own service. Each service has its own container and can act independently of one another. Also, each of these services communicate over well-defined APIs. Because of these characteristics, microservices allow for greater flexibility and scalability for the application it supports. This independence enables teams to develop, test, and deploy microservices in parallel.
+
+Sources: https://aws.amazon.com/microservices/
+	 https://www.youtube.com/watch?v=CdBtNQZH8a4

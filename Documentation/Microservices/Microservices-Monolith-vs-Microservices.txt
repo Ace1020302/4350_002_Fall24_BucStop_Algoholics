@@ -1,0 +1,11 @@
+Monolith Application - Everything is put into and deployed as one application. All teams have to
+use the same tools in making it, and the teams working on it have to coordinate around each other
+when working on/in it as to not affect each other's work. The issues with it is that once the
+application becomes too large and complex to efficiently handle, with many parts of it
+becoming more entangled with each other. You can't deploy parts individually either, you have to deploy
+the entire application again. It also just takes longer to go though the release process as you'll need
+to test the entire application even if only a small part of it has changed. 
+
+Microservices Architecture - Microservices are essentially a split into different components,
+usually split on the different services they provide. The key thing is that they're independent
+of the other services, being able to be deployed and developed seperately. 
